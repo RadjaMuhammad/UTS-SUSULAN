@@ -12,8 +12,7 @@ $tanggal_pesan = $_POST['tanggal_pesan'];
 
 
 #3. Query Update (proses edit data)
-$query = "UPDATE pesanan SET nama_pelanggan='$nama_pelanggan', produk='$produk, jumlah='$jumlah, tanggal_pesanan='$tanggal_pesanan' 
-    WHERE id='$id'";
+$query = "UPDATE pesanan SET nama_pelanggan='$nama_pelanggan', produk='$produk, jumlah='$jumlah, tanggal_pesan='$tanggal_pesan' WHERE id='$id'";
 
 $tambah = mysqli_query($koneksi, $query);
 

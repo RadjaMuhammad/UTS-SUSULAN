@@ -53,60 +53,41 @@
                                 ?>
                                     <tr>
                                         <th scope="row"><?= $nomor++ ?></th>
-                                        <td><?= $data['nama'] ?></td>
-                                        <td><?= $data['nisn'] ?></td>
-                                        <td><?= $data['nama_jurusan'] ?></td>
-                                        <td><?= $data['tgl_lahir'] ?></td>
+                                        <td><?= $data['nama_pelanggan'] ?></td>
+                                        <td><?= $data['produk'] ?></td>
+                                        <td><?= $data['jumlah'] ?></td>
+                                        <td><?= $data['tanggal_pesan'] ?></td>
                                         <td>
-                                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $data['ids'] ?>"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                            <a href="formedit.php?id=<?= $data['ids'] ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalhapus<?= $data['ids'] ?>"><i class="fa-solid fa-trash"></i></button>
+                                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $data['id'] ?>"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                            <a href="formedit.php?id=<?= $data['id'] ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalhapus<?= $data['id'] ?>"><i class="fa-solid fa-trash"></i></button>
 
                                             <!-- Modal Detail-->
-                                            <div class="modal fade" id="exampleModal<?= $data['ids'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="exampleModal<?= $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Detail <?= $data['nama'] ?></h1>
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Detail <?= $data['nama_pelanggan'] ?></h1>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <table class="table">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td colspan="2"><img src="../fotosiswa/<?= $data['foto'] ?>" height="150" alt=""></td>
+                                                                        <td>Nama Pelanggan :</td>
+                                                                        <th scope="row"><?= $data['nama_pelanggan'] ?></th>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>Nama</td>
-                                                                        <th scope="row"><?= $data['nama'] ?></th>
+                                                                        <td>Produk :</td>
+                                                                        <th scope="row"><?= $data['produk'] ?></th>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>NISN</td>
-                                                                        <th scope="row"><?= $data['nisn'] ?></th>
+                                                                        <td>Jumlah :</td>
+                                                                        <th scope="row"><?= $data['jumlah'] ?></th>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>Gelombang </td>
-                                                                        <th scope="row"><?= $data['nama_gelombang'] ?></th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Tempat Lahir</td>
-                                                                        <th scope="row"><?= $data['tempat_lahir'] ?></th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Tanggal Lahir</td>
-                                                                        <th scope="row"><?= $data['tgl_lahir'] ?></th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Alamat</td>
-                                                                        <th scope="row"><?= $data['alamat'] ?></th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Email</td>
-                                                                        <th scope="row"><?= $data['email'] ?></th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Jenis Kelamin</td>
-                                                                        <th scope="row"><?= $data['jenis_kelamin'] ?></th>
+                                                                        <td>Tanggal Pesanan</td>
+                                                                        <th scope="row"><?= $data['tanggal_pesan'] ?></th>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -120,7 +101,7 @@
                                             </div>
 
                                             <!-- Modal Hapus-->
-                                            <div class="modal fade" id="modalhapus<?= $data['ids'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="modalhapus<?= $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -128,11 +109,11 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            Yakin Data Dengan Nama <?= $data['nama'] ?> Ingin Dihapus?
+                                                            Yakin Data Dengan Nama <?= $data['nama_pelanggan'] ?> Ingin Dihapus?
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            <a href="proseshapus.php?id=<?= $data['ids'] ?>" class="btn btn-danger">Hapus</a>
+                                                            <a href="proseshapus.php?id=<?= $data['id'] ?>" class="btn btn-danger">Hapus</a>
                                                         </div>
                                                     </div>
                                                 </div>

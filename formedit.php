@@ -2,7 +2,7 @@
 include_once("koneksi.php");
 $idedit = $_GET['id'];
 $qry = "SELECT * FROM pesanan WHERE id='$idedit'";
-$edit = mysqli_query($koneksi,$qry);
+$edit = mysqli_query($koneksi, $qry);
 $data = mysqli_fetch_array($edit);
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $data = mysqli_fetch_array($edit);
 
 <body style="background-color:#d1e6d4">
     <?php
-    include_once("../navbar.php");
+    include_once("navbar.php");
     ?>
 
     <div class="container">
@@ -30,28 +30,26 @@ $data = mysqli_fetch_array($edit);
                     </div>
                     <div class="card-body">
                         <form action="proses_edit.php" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" name="id" value="<?=$data['id']?>">
+                            <input type="hidden" name="id" value="<?= $data['id'] ?>">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Pelanggan :</label>
-                                <input value="<?=$data['nama_pelanggan']?>" readonly name="nama_pelanggan" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value="<?= $data['nama_pelanggan'] ?>" readonly name="nama_pelanggan" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Produk :</label>
-                                <input value="<?=$data['produk']?>" name="produk" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value="<?= $data['produk'] ?>" name="produk" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jumlah :</label>
-                                <input value="<?=$data['jumlah']?>" name="jumlah" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value="<?= $data['jumlah'] ?>" name="jumlah" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Tanggal Pesanan :</label>
-                                <input value="<?=$data['tanggal_pesanan']?>" name="tanggal_pesanan" type="date" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input value="<?= $data['tanggal_pesan'] ?>" name="tanggal_pesan" type="date" class="form-control">
                             </div>
-                            
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
