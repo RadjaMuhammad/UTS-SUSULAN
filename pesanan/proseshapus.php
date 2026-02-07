@@ -1,6 +1,6 @@
 <?php 
     #1. koneksi database
-    include_once("koneksi.php");
+    include_once("../koneksi.php");
 
     #2. ID hapus
     $idhapus = $_GET['id'];
@@ -15,4 +15,4 @@
     header("location:index.php");
 
     
-?>
+?>  

@@ -1,5 +1,5 @@
 <?php
-include("koneksi.php");
+include("../koneksi.php");
 
 $nama_pelanggan = $_POST['nama_pelanggan'];
 $produk = $_POST['produk'];

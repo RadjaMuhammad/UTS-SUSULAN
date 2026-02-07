@@ -12,7 +12,7 @@
 
 <body style="background-color:#FFE4E1">
     <?php
-    include_once("navbar.php");
+    include_once("../navbar.php");
     ?>
 
     <div class="container">
@@ -36,7 +36,7 @@
                             <tbody>
                                 <?php
                                 #1. koneksi
-                                include("koneksi.php");
+                                include("../koneksi.php");
 
                                 #2. menulikan query menampilkan data
                                 $qry = "SELECT * FROM pesanan";

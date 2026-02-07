@@ -1,3 +1,10 @@
+<?php
+include_once("../koneksi.php");
+$idedit = $_GET['id'];
+$qry = "SELECT * FROM pesanan WHERE id='$idedit'";
+$edit = mysqli_query($koneksi, $qry);
+$data = mysqli_fetch_array($edit);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +18,7 @@
 
 <body style="background-color:#FFE4E1">
     <?php
-    include_once("navbar.php");
+    include_once("../navbar.php");
     ?>
 
     <div class="container">
@@ -19,31 +26,31 @@
             <div class="col-8 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <b>FORM ORDER TRACKER</b>
+                        <b>FORM EDIT ORDER TRACKER</b>
                     </div>
                     <div class="card-body">
-                        <form action="proses_tambah.php" method="POST" enctype="multipart/form-data">
+                        <form action="proses_edit.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?= $data['id'] ?>">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nama :</label>
-                                <input name="nama_pelanggan" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" required>
+                                <label for="exampleInputEmail1" class="form-label">Nama Pelanggan :</label>
+                                <input value="<?= $data['nama_pelanggan'] ?>" readonly name="nama_pelanggan" type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Produk :</label>
-                                <input name="produk" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" required>
+                                <input value="<?= $data['produk'] ?>" name="produk" type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jumlah :</label>
-                                <input name="jumlah" type="number" class="form-control" id="exampleInputEmail1"
+                                <input value="<?= $data['jumlah'] ?>" name="jumlah" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Tanggal Pesanan :</label>
-                                <input name="tanggal_pesan" type="date" class="form-control" id="exampleInputEmail1"
+                                <label for="exampleInputEmail1" class="form-label">Tanggal Pesan :</label>
+                                <input value="<?= $data['tanggal_pesan'] ?>" name="tanggal_pesan" type="date" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
-
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

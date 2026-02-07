@@ -1,6 +1,6 @@
     <?php
     #1. Meng-koneksikan PHP ke MySQL
-    include("koneksi.php");
+    include("../koneksi.php");
 
     #2. Mengambil Value dari Form Tambah
     $id = $_POST['id'];
