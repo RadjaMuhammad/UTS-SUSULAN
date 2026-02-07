@@ -1,0 +1,25 @@
+<?php
+#1. Meng-koneksikan PHP ke MySQL
+include("koneksi.php");
+
+#2. Mengambil Value dari Form Tambah
+$id = $_POST['id'];
+$nama_pelanggan = $_POST['nama_pelanggan'];
+$produk = $_POST['produk'];
+$jumlah = $_POST['jumlah'];
+$tanggal_pesan = $_POST['tanggal_pesan'];
+
+
+
+#3. Query Update (proses edit data)
+$query = "UPDATE pesanan SET nama_pelanggan='$nama_pelanggan', produk='$produk, jumlah='$jumlah, tanggal_pesanan='$tanggal_pesanan' 
+    WHERE id='$id'";
+
+$tambah = mysqli_query($koneksi, $query);
+
+#4. Jika Berhasil triggernya apa? (optional)
+if ($tambah) {
+    header("location:index.php");
+} else {
+    echo "Data Gagal ditambah";
+}
