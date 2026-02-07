@@ -9,7 +9,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body style="background-color:#d1e6d4">
+<body style="background-color:#FFE4E1">
     <?php
     include_once("navbar.php");
     ?>
@@ -26,16 +26,16 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama :</label>
                                 <input name="nama_pelanggan" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Produk :</label>
                                 <input name="produk" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jumlah :</label>
-                                <input name="jumlah" type="text" class="form-control" id="exampleInputEmail1"
+                                <input name="jumlah" type="number" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
